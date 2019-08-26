@@ -1,0 +1,34 @@
+<odoo>
+<record id="asignatura_docente_silabos_form_view" model="ir.ui.view">
+    <field name="name">  RELACION ASIGNATURA DOCENTE</field>
+    <field name="model">silabos.asignatura</field>
+   <field name="arch" type="xml">
+     <form string="formulario para relacionar la asignatura con el docente">
+        <sheeet>
+          <separator string=""></separator>
+          <group>
+              <field name="profesor_ids"/>
+          </group>
+        </sheeet>
+     </form>
+   </field>
+ </record>
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="asignatura_docente_silabos_form_view" model="ir.ui.view">
+    <field name="name">silabos.asignatura_docente.tree.view</field>
+     <field name="model">silabos.asignatura</field>
+     <field name="arch" type="xml">
+       <tree string="formulario para ....">
+            <field name="profesor_ids"/>
+
+       </tree>
+     </field>
+</record>
+
+  <record id="action_silabos_asignatura_docente" model="ir.actions.act_window">
+    <field name="name">Registro de Ciclo Academico</field>
+    <field name="res_model" >silabos.asignatura</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+  </record>
+</odoo>

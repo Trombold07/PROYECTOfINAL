@@ -1,0 +1,53 @@
+<odoo>
+ <record id="estudiante_silabos_form_view" model="ir.ui.view">
+
+   <field name="name"> estudiantes del ITSLA</field>
+   <field name="model">silabos.estudiante</field>
+   <field name="arch" type="xml">
+     <form string="formulario para agregar estudiantes">
+        <header>
+
+        </header>
+        <sheeet>
+          <separator string=" datos de la estudiante"></separator>
+            <group name="group_top" colspan="2">
+                  <group name="group_left">
+                       <field name="cedula"/>
+                       <field name="nombre"/>
+                  </group>
+                  <group name="group_right">
+                       <field name="fecha_naciemiento"/>
+                  </group>
+            </group>
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="silabos.estudiante_tree_view" model="ir.ui.view">
+  <field name="name">silabos.estudiante.tree.view</field>
+     <field name="model">silabos.estudiante</field>
+     <field name="arch" type="xml">
+       <tree string="formulario para agregar estudiantes">
+
+              <field name="cedula"/>
+              <field name="nombre"/>
+              <field name="fecha_naciemiento"/>
+
+
+       </tree>
+     </field>
+
+</record>
+  <record id="action_silabos_estudiante" model="ir.actions.act_window">
+
+     <field name="name">Registro de estudiante</field>
+    <field name="res_model" >silabos.estudiante</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+
+  </record>
+
+
+</odoo>

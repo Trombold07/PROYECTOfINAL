@@ -1,0 +1,64 @@
+<odoo>
+ <record id="control_silabos_form_view" model="ir.ui.view">
+
+   <field name="name">Control Diario de las Semanas de la Asignatura  de las Carreras del ITSLA</field>
+   <field name="model">silabos.control</field>
+   <field name="arch" type="xml">
+     <form string="Formulario Para Agregar Control Diario">
+        <header>
+
+        </header>
+        <sheeet>
+          <separator string=" Datos del Control Diario"></separator>
+            <group name="group_top" colspan="2">
+                  <group name="group_left">
+                      <field name="fecha"/>
+                      <field name="tema_dictado"/>
+                      <field name="actividades"/>
+                  </group>
+                  <group name="group_right">
+                      <field name="recursos"/>
+                      <field name="estudiante_id"/>
+                  </group>
+              </group>
+          <group>
+
+              <separator string=" Observaciones Adicionales" colspan="4"></separator>
+              <field name="observacion" nolabel="1" />
+          </group>
+
+
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="silabos.control_tree_view" model="ir.ui.view">
+  <field name="name">silabos.control.tree.view</field>
+     <field name="model">silabos.control</field>
+     <field name="arch" type="xml">
+       <tree string="Formulario para Agregar control Diario">
+
+              <field name="fecha"/>
+              <field name="tema_dictado"/>
+              <field name="actividades"/>
+              <field name="recursos"/>
+              <field name="observacion"/>
+              <field name="estudiante_id"/>
+
+       </tree>
+     </field>
+
+</record>
+  <record id="action_silabos_control" model="ir.actions.act_window">
+
+     <field name="name">Registro de control</field>
+    <field name="res_model" >silabos.control</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+
+  </record>
+
+
+</odoo>

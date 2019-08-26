@@ -1,0 +1,55 @@
+<odoo>
+ <record id="taller_silabos_form_view" model="ir.ui.view">
+
+   <field name="name"> Administrador de Talleres</field>
+   <field name="model">silabos.taller</field>
+   <field name="arch" type="xml">
+     <form string="Formulario para Agregar Reservas">
+        <header>
+
+        </header>
+        <sheeet>
+          <separator string=" Datos del Taller"></separator>
+            <group name="group_top" colspan="1">
+                  <group name="group_left">
+                       <field name="numerotaller"/>
+
+                  </group>
+                  <group name="group_right">
+                       <field name="capacidad"/>
+
+                  </group>
+              </group>
+
+
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="silabos.taller_tree_view" model="ir.ui.view">
+  <field name="name">silabos.taller.tree.view</field>
+     <field name="model">silabos.taller</field>
+     <field name="arch" type="xml">
+       <tree string="formulario para agregar Talleres">
+
+              <field name="numerotaller"/>
+              <field name="capacidad"/>
+
+
+       </tree>
+     </field>
+
+</record>
+  <record id="action_silabos_taller" model="ir.actions.act_window">
+
+     <field name="name">Registro de Administradores</field>
+    <field name="res_model" >silabos.admin</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+
+  </record>
+
+
+</odoo>

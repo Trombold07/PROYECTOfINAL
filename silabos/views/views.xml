@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="silabos.list">
+      <field name="name">silabos list</field>
+      <field name="model">silabos.silabos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="silabos.action_window">
+      <field name="name">silabos window</field>
+      <field name="res_model">silabos.silabos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="silabos.action_server">
+      <field name="name">silabos server</field>
+      <field name="model_id" ref="model_silabos_silabos"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="silabos" id="silabos.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="silabos.menu_1" parent="silabos.menu_root"/>
+    <menuitem name="Menu 2" id="silabos.menu_2" parent="silabos.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="silabos.menu_1_list" parent="silabos.menu_1"
+              action="silabos.action_window"/>
+    <menuitem name="Server to list" id="silabos" parent="silabos.menu_2"
+              action="silabos.action_server"/>
+    -->
+  </data>
+</odoo>

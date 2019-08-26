@@ -1,0 +1,87 @@
+<odoo>
+ <record id="asignatura_silabos_form_view" model="ir.ui.view">
+   <field name="name">Asiganturas de las Carreras del ITSLA</field>
+   <field name="model">silabos.asignatura</field>
+   <field name="arch" type="xml">
+     <form string="formulario para agregar Asignaturas">
+        <header>
+            <button string="Verificado" type="object" name="set_to_Verificado" attrs="{'invisible': [('state','=','verificado')]}"/>
+            <button string="Modificar" type="object" name="set_to_modificar" class="oe_highlight" attrs="{'invisible': [('state','=','modificar')]}"/>
+            <field name="state" widget="statusbar" statusbar_visible="verificado,modificar" attrs="{'invisible':[('state','=','verificado')]}"/>
+        </header>
+        <sheeet>
+          <separator string=" datos de la asignatura"></separator>
+          <group>
+              <group name="group_top" colspan="2">
+                  <group name="group_left">
+                      <field name="name"/>
+                      <field name="idAsignatura"/>
+                  </group>
+                  <group name="group_right">
+                       <field name="numero_horas"/>
+                       <field name="creditos"/>
+                  </group>
+              </group>
+              <separator string=" Descripcion"></separator>
+              <field name="descripcion" />
+              <separator string=" Objetivos"></separator>
+              <field name="objetivos_especificos" />
+              <separator string=" Competencias Generales"></separator>
+              <field name="compeGenerica" />
+              <separator string=" Competencias Especificas"></separator>
+              <field name="compeEspecifica" />
+
+          </group>
+            <group>
+                <separator string=" Requisitos" colspan="4"></separator>
+                <field name="requisito_ids" nolabel="1"/>
+            </group>
+            <group>
+                <separator string=" Resultados" colspan="4"></separator>
+               <field name="resultado_ids" nolabel="1"/>
+            </group>
+
+            <group>
+                <separator string=" Profesor" colspan="4"></separator>
+                <field name="profesor_ids" nolabel="1"/>
+             </group>
+
+            <group>
+                <separator string=" Unidad" colspan="4"></separator>
+                <field name="unidad_ids" nolabel="1"/>
+             </group>
+
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="silabos.asignatura_tree_view" model="ir.ui.view">
+  <field name="name">silabos.asignatura.tree.view</field>
+     <field name="model">silabos.asignatura</field>
+     <field name="arch" type="xml">
+       <tree string="formulario para agregar asignaturaa">
+            <field name="name"/>
+              <field name="idAsignatura"/>
+              <field name="numero_horas"/>
+              <field name="creditos"/>
+              <field name="descripcion"/>
+              <field name="objetivos_especificos"/>
+              <field name="compeGenerica"/>
+              <field name="compeEspecifica"/>
+
+              <field name="requisito_ids"/>
+              <field name="resultado_ids"/>
+              <field name="profesor_ids"/>
+              <field name="unidad_ids"/>
+       </tree>
+     </field>
+</record>
+  <record id="action_silabos_asignatura" model="ir.actions.act_window">
+     <field name="name">Registro de Asignatura</field>
+    <field name="res_model" >silabos.asignatura</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+  </record>
+</odoo>

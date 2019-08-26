@@ -1,0 +1,45 @@
+<odoo>
+ <record id="relacionca_silabos_form_view" model="ir.ui.view">
+
+   <field name="name">Relacion de lso contenidos de la Asignatura con los resultados de Aprendizaje</field>
+   <field name="model">silabos.relacionca</field>
+   <field name="arch" type="xml">
+     <form string="Formulario de Relacion">
+        <header>
+
+        </header>
+        <sheeet>
+          <group>
+              <field name="contenido"/>
+              <field name="contribucion"/>
+              <field name="resultado"/>
+            </group>
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="silabos.relacionca_tree_view" model="ir.ui.view">
+  <field name="name">silabos.relacionca.tree.view</field>
+     <field name="model">silabos.relacionca</field>
+     <field name="arch" type="xml">
+       <tree string="formulario para agregar Contenidos">
+             <field name="contenido"/>
+              <field name="contribucion"/>
+              <field name="resultado"/>
+       </tree>
+     </field>
+
+</record>
+  <record id="action_silabos_relacionca" model="ir.actions.act_window">
+
+      <field name="name">Registro de Temas</field>
+    <field name="res_model" >silabos.relacionca</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+
+  </record>
+
+
+</odoo>

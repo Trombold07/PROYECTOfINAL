@@ -1,0 +1,56 @@
+<odoo>
+ <record id="acta_silabos_form_view" model="ir.ui.view">
+
+   <field name="name">Acta de Entrega de silabos de Asiganturas de las Carreras del ITSLA</field>
+   <field name="model">silabos.acta</field>
+   <field name="arch" type="xml">
+     <form string="formulario para agregar Acta de Entrega de Silabo">
+        <header>
+
+        </header>
+        <sheeet>
+          <separator string=" datos del Acta de Entrega"></separator>
+          <group>
+              <field name="name"/>
+
+              <field name="fechaEntrega"/>
+              <field name="descripcion"/>
+              <field name="nombreDocente"/>
+              <field name="coordinadorCarrera"/>
+              <field name="vicerrectoradoAcademico"/>
+              <field name="estudiante_id" />
+          </group>
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="silabos.acta_tree_view" model="ir.ui.view">
+  <field name="name">silabos.acta.tree.view</field>
+     <field name="model">silabos.acta</field>
+     <field name="arch" type="xml">
+       <tree string="formulario para agregar acta de Entrega del Silabo">
+            <field name="name"/>
+
+              <field name="fechaEntrega"/>
+              <field name="descripcion"/>
+              <field name="nombreDocente"/>
+              <field name="coordinadorCarrera"/>
+              <field name="vicerrectoradoAcademico"/>
+              <field name="estudiante_id"/>
+      </tree>
+     </field>
+
+</record>
+  <record id="action_silabos_acta" model="ir.actions.act_window">
+
+     <field name="name">Registro de Acta  de Entrega del Silabo</field>
+    <field name="res_model" >silabos.acta</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+
+  </record>
+
+
+</odoo>

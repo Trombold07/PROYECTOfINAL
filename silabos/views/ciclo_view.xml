@@ -1,0 +1,48 @@
+<odoo>
+ <record id="ciclo_silabos_form_view" model="ir.ui.view">
+
+   <field name="name">  Ciclo Academico del ITSLA</field>
+   <field name="model">silabos.ciclo</field>
+   <field name="arch" type="xml">
+     <form string="formulario para agregar Ciclo">
+        <header>
+        </header>
+        <sheeet>
+          <separator string=" datos del Ciclo"></separator>
+          <group>
+              <field name="nombre"/>
+
+          </group>
+           <group>
+               <separator string=" Asignatura" colspan="4"></separator>
+              <field name="asignatura_ids" nolabel="1" colspan="4"/>
+          </group>
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="silabos.ciclo_tree_view" model="ir.ui.view">
+  <field name="name">silabos.ciclo.tree.view</field>
+     <field name="model">silabos.ciclo</field>
+     <field name="arch" type="xml">
+       <tree string="formulario para agregar Ciclo Academico">
+             <field name="nombre"/>
+             <field name="asignatura_ids" />
+
+       </tree>
+     </field>
+
+</record>
+  <record id="action_silabos_ciclo" model="ir.actions.act_window">
+
+     <field name="name">Registro de Ciclo Academico</field>
+    <field name="res_model" >silabos.ciclo</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+
+  </record>
+
+
+</odoo>

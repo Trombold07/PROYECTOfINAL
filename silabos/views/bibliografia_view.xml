@@ -1,0 +1,56 @@
+<odoo>
+ <record id="bibliografia_silabos_form_view" model="ir.ui.view">
+
+   <field name="name">Bibliografia del Contenido de las Asignaturas del ITSLA</field>
+   <field name="model">silabos.bibliografia</field>
+   <field name="arch" type="xml">
+     <form string="formulario para agregar Bibliografia">
+        <header>
+
+        </header>
+        <sheeet>
+
+          <group>
+               <field name="autor"/>
+               <field name="titulo"/>
+               <field name="lugarPrublicacion"/>
+               <field name="edicion"/>
+               <field name="anioPublicacion"/>
+               <field name="editorial"/>
+              <field name="isbn"/>
+
+
+          </group>
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="silabos.bibliografia_tree_view" model="ir.ui.view">
+  <field name="name">silabos.bibliografia.tree.view</field>
+     <field name="model">silabos.bibliografia</field>
+     <field name="arch" type="xml">
+       <tree string="formulario para agregar bibliografia">
+               <field name="autor"/>
+               <field name="titulo"/>
+               <field name="lugarPrublicacion"/>
+               <field name="edicion"/>
+               <field name="anioPublicacion"/>
+               <field name="editorial"/>
+              <field name="isbn"/>
+       </tree>
+     </field>
+
+</record>
+  <record id="action_silabos_bibliografia" model="ir.actions.act_window">
+
+      <field name="name">Registro de Asignatura</field>
+    <field name="res_model" >silabos.bibliografia</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+
+  </record>
+
+
+</odoo>

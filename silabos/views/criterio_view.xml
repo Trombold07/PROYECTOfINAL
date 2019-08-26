@@ -1,0 +1,51 @@
+<odoo>
+ <record id="criterio_silabos_form_view" model="ir.ui.view">
+
+   <field name="name"> Criterios de Evaluacion</field>
+   <field name="model">silabos.criterio</field>
+   <field name="arch" type="xml">
+     <form string="formulario para agregar Criterio de Evaluacion de Estudiante por Resultados de Aprendizaje">
+
+        <sheeet>
+          <separator string=" datos del criterio"></separator>
+          <group>
+              <field name="instrumento"/>
+              <field name="porcentaje1"/>
+              <field name="puntos1"/>
+              <field name="porcentaje2"/>
+              <field name="puntos2"/>
+
+
+          </group>
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="silabos.criterio_tree_view" model="ir.ui.view">
+  <field name="name">silabos.criterio.tree.view</field>
+     <field name="model">silabos.criterio</field>
+     <field name="arch" type="xml">
+       <tree string="formulario para agregar criterio">
+
+              <field name="instrumento"/>
+              <field name="porcentaje1" sum="Total"/>
+              <field name="puntos1" sum="Total"/>
+              <field name="porcentaje2" sum="Total"/>
+              <field name="puntos2" sum="Total"/>
+       </tree>
+
+     </field>
+</record>
+    <record id="action_silabos_criterio" model="ir.actions.act_window">
+
+     <field name="name">Registro de Criterio</field>
+    <field name="res_model" >silabos.criterio</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+
+  </record>
+
+
+</odoo>

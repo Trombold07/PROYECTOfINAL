@@ -1,0 +1,57 @@
+<odoo>
+ <record id="contenido_silabos_form_view" model="ir.ui.view">
+
+   <field name="name">Contenidos de las Asiganturas de las Carreras del ITSLA</field>
+   <field name="model">silabos.contenido</field>
+   <field name="arch" type="xml">
+     <form string="formulario para agregar Contenidos">
+        <header>
+
+        </header>
+        <sheeet>
+          <separator string=" datos del Tema a Impartir"></separator>
+          <group>
+              <field name="unidad"  widget="selection" />
+              <field name="tema"/>
+              <field name="teoricas" />
+              <field name="practicas"/>
+              <field name="tutorias"/>
+              <field name="actPractica"/>
+              <field name="tautonomo"/>
+              <field name="mecanismoEva"/>
+            </group>
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="silabos.contenido_tree_view" model="ir.ui.view">
+  <field name="name">silabos.contenido.tree.view</field>
+     <field name="model">silabos.contenido</field>
+     <field name="arch" type="xml">
+       <tree string="formulario para agregar Contenidos">
+
+              <field name="unidad"/>
+              <field name="tema"/>
+              <field name="teoricas" sum="Total Horas"/>
+              <field name="practicas" sum="Total Horas"/>
+              <field name="tutorias" sum="Total Horas"/>
+              <field name="actPractica" sum="Total Horas"/>
+              <field name="tautonomo" sum="Total Horas"/>
+              <field name="mecanismoEva"/>
+       </tree>
+     </field>
+
+</record>
+  <record id="action_silabos_contenido" model="ir.actions.act_window">
+
+      <field name="name">Registro de Temas</field>
+    <field name="res_model" >silabos.contenido</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+
+  </record>
+
+
+</odoo>

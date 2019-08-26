@@ -1,0 +1,61 @@
+<odoo>
+ <record id="unidad_silabos_form_view" model="ir.ui.view">
+
+   <field name="name">Unidades de las Asigaturas  de las Carreras del ITSLA</field>
+   <field name="model">silabos.unidad</field>
+   <field name="arch" type="xml">
+     <form string="formulario para agregar unidades">
+        <header>
+
+        </header>
+        <sheeet>
+          <separator string=" Datos de la unidad"></separator>
+          <group>
+              <field name="nombre" colspan="4"/>
+              <separator string=" Resultado" colspan="4"></separator>
+              <field name="resultadoAprendizaje" nolabel="1" colspan="4"/>
+              <separator string=" Metodologia" colspan="4"></separator>
+              <field name="metoAprendizaje" nolabel="1" colspan="4"/>
+              <separator string=" Recursos" colspan="4"></separator>
+              <field name="recDidacticos" nolabel="1" colspan="4"/>
+          </group>
+            <group>
+                <separator string=" Semana" colspan="4"></separator>
+                 <field name="semana_ids" nolabel="1" colspan="4"/>
+            </group>
+
+
+           
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="silabos.unidad_tree_view" model="ir.ui.view">
+  <field name="name">silabos.unidad.tree.view</field>
+     <field name="model">silabos.unidad</field>
+     <field name="arch" type="xml">
+       <tree string="formulario para agregar unidades">
+
+              <field name="nombre"/>
+              <field name="resultadoAprendizaje"/>
+              <field name="metoAprendizaje"/>
+              <field name="recDidacticos"/>
+              <field name="semana_ids"/>
+
+       </tree>
+     </field>
+
+</record>
+  <record id="action_silabos_unidad" model="ir.actions.act_window">
+
+     <field name="name">Registro de unidad</field>
+    <field name="res_model" >silabos.unidad</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+
+  </record>
+
+
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+
+<odoo>
+    <data noupdate="0">
+
+        <record id="module_category_silabos" model="ir.module.category">
+            <field name="name">Silabos</field>
+            <field name="sequence">22</field>
+        </record>
+
+        <record id="group_silabos_silabo_manager" model="res.groups">
+            <field name="name"> Silabos / Administrador </field>
+            <field name="category_id" ref="module_category_silabos"> </field>
+            <field name="users" eval="[(4, ref('base.user_root'))]" > </field>
+        </record>
+
+        <!-- >        -->
+
+        <record id="group_silabos_admin" model="res.groups">
+            <field name="name">Silabos / Admin</field>
+            <field name="category_id" ref="module_category_silabos" />
+        </record>
+
+         <record id="group_silabos_mecanico" model="res.groups">
+            <field name="name">Silabos / Mecanico</field>
+            <field name="category_id" ref="module_category_silabos" />
+        </record>
+
+        <record id="group_silabos_cliente" model="res.groups">
+            <field name="name">Silabos / Cliente</field>
+            <field name="category_id" ref="module_category_silabos" />
+        </record>
+
+
+
+
+    </data>
+</odoo>

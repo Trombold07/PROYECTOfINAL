@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <act_window id="menu_root"
+        name="Sistema de Mecanica"
+        res_model="silabos.silabo"
+        view_id="silabo_silabos_form_view"
+        view_mode= "tree, form"/>
+    <menuitem id="silabos_menu_root" sequence="1" name="Silabos"/>
+    <menuitem id="silabos_silabo_menu_cateory" name="Administrar Mecanica" parent="silabos_menu_root" sequence ="2"/>
+
+    <menuitem id="action_silabos_cliente" sequence="1" name="Cliente" parent="silabos_silabo_menu_cateory" action="action_silabos_cliente"/>
+    <menuitem id="action_silabos_mecanico" sequence="2" name="Mecanico" parent="silabos_silabo_menu_cateory" action="action_silabos_mecanico"/>
+    <menuitem id="action_silabos_admin" sequence="3" name="Administrador" parent="silabos_silabo_menu_cateory" action="action_silabos_admin"/>
+    <menuitem id="action_silabos_reserva" sequence="4" name="Reserva" parent="silabos_silabo_menu_cateory" action="action_silabos_reserva"/>
+    <menuitem id="action_silabos_taller" sequence="5" name="Taller" parent="silabos_silabo_menu_cateory" action="action_silabos_taller"/>
+    <menuitem id="action_silabos_vehiculo" sequence="6" name="Vehiculo" parent="silabos_silabo_menu_cateory" action="action_silabos_vehiculo"/>
+    <menuitem id="action_silabos_mantenimiento" sequence="7" name="Mantenimiento" parent="silabos_silabo_menu_cateory" action="action_silabos_mantenimiento"/>
+    <menuitem id="action_silabos_inventario" sequence="8" name="Inventario" parent="silabos_silabo_menu_cateory" action="action_silabos_inventario"/>
+    <menuitem id="action_silabos_mecanica" sequence="9" name="Mecanica" parent="silabos_silabo_menu_cateory" action="action_silabos_mecanica"/>
+    <menuitem id="action_silabos_proveedor" sequence="10" name="Proveedor" parent="silabos_silabo_menu_cateory" action="action_silabos_proveedor"/>
+    <menuitem id="action_silabos_usuario" sequence="11" name="Usuario" parent="silabos_silabo_menu_cateory" action="action_silabos_usuario"/>
+
+</odoo>

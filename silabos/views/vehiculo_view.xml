@@ -1,0 +1,56 @@
+<odoo>
+ <record id="vehiculo_silabos_form_view" model="ir.ui.view">
+
+   <field name="name"> Administrador de Vehiculos</field>
+   <field name="model">silabos.vehiculo</field>
+   <field name="arch" type="xml">
+     <form string="Formulario para Agregar Vehiculos">
+        <header>
+
+        </header>
+        <sheeet>
+          <separator string=" Datos del Vehiculo"></separator>
+            <group name="group_top" colspan="1">
+                  <group name="group_left">
+                       <field name="marca"/>
+                       <field name="placa"/>
+
+                  </group>
+              </group>
+            <group>
+                <separator string=" Estado Vehiculo"></separator>
+                    <field name="estadovehiculo" nolabel="1" colspan="4"/>
+            </group>
+
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="silabos.vehiculo_tree_view" model="ir.ui.view">
+  <field name="name">silabos.vehiculo.tree.view</field>
+     <field name="model">silabos.vehiculo</field>
+     <field name="arch" type="xml">
+       <tree string="formulario para agregar Vehiculos">
+
+              <field name="marca"/>
+              <field name="placa"/>
+              <field name="estadovehiculo"/>
+
+
+       </tree>
+     </field>
+
+</record>
+  <record id="action_silabos_vehiculo" model="ir.actions.act_window">
+
+     <field name="name">Registro de Vehiculos</field>
+    <field name="res_model" >silabos.vehiculo</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+
+  </record>
+
+
+</odoo>

@@ -1,0 +1,210 @@
+<odoo>
+ <record id="silabo_silabos_form_view" model="ir.ui.view">
+   <field name="name">Silabos de las Carreras del ITSLA</field>
+   <field name="model">silabos.silabo</field>
+   <field name="arch" type="xml">
+     <form string="formulario para agregar silabos">
+        <header>
+            <button string="Borrador" type="object" name="set_to_borrador" class="oe_highlight" attrs="{'invisible': [('state','!=','borrador')]}"/>
+            <button string="En revision" type="object" name="set_to_revision" attrs="{'invisible': [('state','=','en_revision')]}"/>
+            <button string="Aprobado" type="object" name="set_to_aprobado" attrs="{'invisible': [('state','=','aprobado')]}"/>
+            <button string="Retornado" type="object" name="set_to_borrador" class="oe_highlight" attrs="{'invisible': [('state','=','aprobado')]}"/>
+            <field name="state" widget="statusbar" statusbar_visible="borrador,en_revision,aprobado" attrs="{'invisible':[('state','=','aprobado')]}"/>
+        </header>
+        <sheeet>
+          <separator string=" Datos Generales del silabo"></separator>
+          <group>
+            <field name="name" required="1"  attrs="{'readonly':[('state','in',['en_revision','terminado'])]}" placeholder="Nombre del Silabo"/>
+          </group>
+            <group name="group_top">
+             <group name="group_left">
+                <!-- widget= "many2onebutton" ,progressbar, canvas==para una foto cerca del texto,-->
+                 <field name="carrera_id" widget="radio">
+
+
+                 </field>
+                 <field name="ciclo_id" domain="[('carrera_id', '=', carrera_id )]"/>
+                <!-- widget= "many2onebutton" ,progressbar, canvas==para una foto cerca del texto,-->
+                 <field name="asignatura_id" widget="selection"  domain="[('ciclo_id', '=', ciclo_id )]"/>
+                <!-- widget= "many2onebutton" ,progressbar, canvas==para una foto cerca del texto,-->
+                 <field name="codAsignatura"/>
+
+                 <field name="evento" widget="selection"/>
+                 <field name="nivel"/>
+                 <field name="horasPerioAsigna"/>
+
+          </group>
+          <group name="group_right" >
+               <field name="unidad_organizacion_curricular"/>
+               <field name="periodo_id" widget="selection"/>
+               <field name="modalidad" widget="selection"/>
+               <field name="profesor_id" widget="selection"/>
+               <field name="credAsigna"/>
+               <field name="fecha"/>
+               <field name="emaDoc"/>
+          </group>
+          </group>
+            <separator string="0. DISTRIBUCION DE LAS HORAS DE CONFORMIDAD CON EL ART. 15 DEL RRA"></separator>
+             <group>
+                 <group name="group_top" colspan="4">
+                     <group name="group_left">
+                         <separator string="Horas Teoricas Asisitidas por Docente" colspan="2"></separator>
+                         <field name="porcenhorasTeoriXDocente" widwet="selection"/>
+                         <field name="horasTeoriXDocente"/>
+                         <separator string="Horas Practicas Asisitidas por Docente" colspan="2"></separator>
+                         <field name="porcenhorasPractiXDocente"  widwet="selection"/>
+                         <field name="horasPractiXDocente"/>
+                         <separator string="Horas de Tutoria Virtuales" colspan="2"></separator>
+                         <field name="porcenhorasVirtuales"  widwet="selection"/>
+                         <field name="virtual"/>
+                      </group>
+                     <group name="group_right">
+                         <separator string="Horas Tutorias Presenciales" colspan="2"></separator>
+                          <field name="porcenPresencial"  widwet="selection"/>
+                          <field name="presencial"/>
+                         <separator string="Horas Practicas de Campo, Talleres" colspan="2"></separator>
+                          <field name="porcenhorasPractiCampoTalle" widwet="selection"/>
+                          <field name="horasPractiCampoTalle"/>
+                         <separator string="Horas Trabajo Autonomo" colspan="2"></separator>
+                          <field name="porcenhrsTrabAuto" widwet="selection"/>
+                          <field name="hrsTrabAuto"/>
+                     </group>
+                   </group>
+            </group>
+             <separator string="2. Prerrequisitos y  Correquisitos"></separator>
+            <group>
+                    <field name="reqAsigna" nolabel="1">
+                        <tree string="Carreras" editable="botton" edit="button" >
+                         <field name="prerequisito"/>
+                         <field name="codigo_prerequisito"/>
+                         <field name="corequisito"/>
+                         <field name="codigo_corequisito"/>
+                        </tree>
+                    </field>
+            </group>
+             <separator string="3. Descripcion de la asignatura" ></separator>
+             <group>
+                <field name="descAsignatura" nolabel="1"/>
+            </group>
+            <separator string="4. Objetivos Especificos de la Asignatura:" ></separator>
+             <group>
+                  <field name="objespeAsignatura" nolabel="1"/>
+
+            </group>
+            <separator string="5. Resultados de Aprendizaje de la Asignatura:"></separator>
+             <group>
+                  <field name="resAsigna"  nolabel="1"/>
+            </group>
+            <separator string="6. Competencias Genericas de la Asignatura:" ></separator>
+             <group>
+                 <field name="compGeneAsigna" nolabel="1"/>
+            </group>
+            <separator string="7. Competencias Especificas de la Asignatura" ></separator>
+             <group>
+                    <field name="compEspeAsigna" nolabel="1"/>
+            </group>
+            <separator string="8. Unidades Curriculares" ></separator>
+             <group>
+                <field name="unidades_ids" nolabel="1"/>
+            </group>
+            <group>
+                <field name="contenido_ids" nolabel="1"/>
+            </group>
+            <separator string="9. Desarrollo Semanal de la Asignatura" ></separator>
+            <group>
+                <field name="semanaUnidad" nolabel="1"/>
+            </group>
+
+            <separator string="10. Criterio de evaluacion del Estudiante por Resultados de Aprendizaje"  ></separator>
+             <group>
+                 <field name="criterio_ids" nolabel="1"/>
+            </group>
+
+             <separator string="11. Bibliografía:" ></separator>
+             <group>
+                <field name="bibliografia_ids" nolabel="1"/>
+            </group>
+            <separator string="12. PERFIL DEL PROFESOR DE LA ASIGNATURA"></separator>
+             <group>
+                 <field name="titulDoc"  editable="0"  />
+                 <field name="especialidadDoc" />
+                 <field name="nivelDoc" />
+                 <field name="regSeneDoc"/>
+            </group>
+               <separator string="12.1. HABILIDADES QUE POSEE EL DOCENTE:" ></separator>
+               <field name="habiDoce" nolabel="1"/>
+
+            <separator string="12.2. ACTITUDES  DEL DOCENTE:" ></separator>
+            <group>
+                <field name="actDoce" nolabel="1"/>
+            </group>
+
+            <separator string="13. RELACION DE LOS CONTENIDOS DE LA ASIGNATURA CON LOS RESULTADOS DE APRENDIZAJE" ></separator>
+            <group>
+                <field name="relacionca_ids" nolabel="1"/>
+            </group>
+             <separator string="14. RELACION DE LA ASIGNATURA CON LOS RESULTADOS DE APRENDIZAJE DEL PERFIL DE EGRESO DE LA CARRERA:" ></separator>
+            <group>
+                <field name="relacionar_ids" nolabel="1"/>
+            </group>
+
+             <group>
+                <field name="actaEntrega_id"/>
+            </group>
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="silabos.silabo_tree_view" model="ir.ui.view">
+  <field name="name">silabos.silabo.tree.view</field>
+     <field name="model">silabos.silabo</field>
+     <field name="arch" type="xml">
+       <tree string="formulario para agregar silabos">
+              <field name="name"/>
+              <field name="carrera_id"/>
+              <field name="periodo_id"/>
+              <field name="asignatura_id"/>
+              <field name="evento" />
+              <field name="nivel"/>
+              <field name="profesor_id"/>
+              <field name="unidad_organizacion_curricular"/>
+              <field name="codAsignatura"/>
+              <field name="ciclo_id"/>
+              <field name="modalidad"/>
+              <field name="creditosAsig"/>
+              <field name="fecha"/>
+              <field name="emaDoc"/>
+
+              <field name="reqAsigna" />
+              <field name="descAsignatura"/>
+              <field name="objespeAsignatura"/>
+              <field name="resAsigna" />
+              <field name="compGeneAsigna" />
+              <field name="compEspeAsigna" />
+              <field name="unidades_ids"/>
+              <field name="contenido_ids"/>
+              <field name="semanaUnidad"/>
+              <field name="criterio_ids"/>
+              <field name="bibliografia_ids"/>
+              <field name="titulDoc"  />
+              <field name="especialidadDoc" />
+              <field name="nivelDoc" />
+              <field name="regSeneDoc"/>
+              <field name="habiDoce" />
+              <field name="actDoce"/>
+              <field name="relacionca_ids"/>
+              <field name="relacionar_ids"/>
+              <field name="actaEntrega_id"/>
+       </tree>
+     </field>
+</record>
+  <record id="action_silabos_silabo" model="ir.actions.act_window">
+     <field name="name">Registro de Silabos</field>
+    <field name="res_model" >silabos.silabo</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+  </record>
+</odoo>
+     

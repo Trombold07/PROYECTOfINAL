@@ -1,0 +1,42 @@
+<odoo>
+ <record id="acta_silabos_form_view" model="ir.ui.view">
+
+   <field name="name">Resultados de Aprendizaje de las Asiganturas de las Carreras del ITSLA</field>
+   <field name="model">silabos.resultado</field>
+   <field name="arch" type="xml">
+     <form string="formulario para agregar Resultados de Aprendizaje">
+        <header>
+
+        </header>
+        <sheeet>
+          <separator string=" datos de Los Resultados De Aprendizaje"></separator>
+          <group>
+              <field name="descripcion"/>
+          </group>
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="silabos.resultado_tree_view" model="ir.ui.view">
+  <field name="name">silabos.resultado.tree.view</field>
+     <field name="model">silabos.resultado</field>
+     <field name="arch" type="xml">
+       <tree string="formulario para agregar resultado">
+              <field name="descripcion"/>
+      </tree>
+     </field>
+
+</record>
+  <record id="action_silabos_resultado" model="ir.actions.act_window">
+
+     <field name="name">Registro resultado</field>
+    <field name="res_model" >silabos.resultado</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+
+  </record>
+
+
+</odoo>

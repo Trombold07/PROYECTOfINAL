@@ -1,0 +1,55 @@
+<odoo>
+ <record id="periodo_silabos_form_view" model="ir.ui.view">
+
+   <field name="name"> Periodo del Ciclo Academico del ITSLA</field>
+   <field name="model">silabos.periodo</field>
+   <field name="arch" type="xml">
+     <form string="formulario para agregar periodo">
+        <header>
+        </header>
+        <sheeet>
+          <separator string=" datos del Periodo"></separator>
+            <group name="group_top" colspan="2">
+                  <group name="group_left">
+                       <field name="name"/>
+                  </group>
+                  <group name="group_right">
+                       <field name="fecha_inicio"/>
+                       <field name="fecha_fin"/>
+                  </group>
+            </group>
+            <separator string=" Carreras"></separator>
+            <group>
+                <field name="carrera_ids" nolabel="1"/>
+            </group>
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="silabos.periodo_tree_view" model="ir.ui.view">
+  <field name="name">silabos.periodo.tree.view</field>
+     <field name="model">silabos.periodo</field>
+     <field name="arch" type="xml">
+       <tree string="formulario para agregar Peridoo Academico">
+
+              <field name="name"/>
+              <field name="fecha_inicio"/>
+              <field name="fecha_fin"/>
+              <field name="carrera_ids"/>
+       </tree>
+     </field>
+
+</record>
+  <record id="action_silabos_periodo" model="ir.actions.act_window">
+
+     <field name="name">Registro de Periodo Academico</field>
+    <field name="res_model" >silabos.periodo</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+
+  </record>
+
+
+</odoo>

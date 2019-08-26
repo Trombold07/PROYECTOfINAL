@@ -1,0 +1,80 @@
+<odoo>
+ <record id="semana_silabos_form_view" model="ir.ui.view">
+
+   <field name="name">Semanas de las Unidades  de las Carreras del ITSLA</field>
+   <field name="model">silabos.semana</field>
+   <field name="arch" type="xml">
+     <form string="formulario para agregar semanas">
+        <header>
+
+        </header>
+        <sheeet>
+          <separator string=" datos de la semana"></separator>
+            <group name="group_top" colspan="2">
+                  <group name="group_left">
+                      <field name="fechaInicio"/>
+                      <field name="fechaFin"/>
+                  </group>
+                  <group name="group_right">
+                      <field name="horas_duracion"/>
+                  </group>
+
+              </group>
+             <group >
+                 <separator string=" Contenidos y actividades de estudio Teorico" colspan="4"></separator>
+                 <field name="contenido" nolabel="1"/>
+             </group>
+            <group >
+                <separator string="¿Qué Actividades Prácticas se Realizarán?" colspan="4"></separator>
+                <field name="actividades_practicas" nolabel="1"/>
+            </group>
+             <group >
+                 <separator string=" ¿Qué Actividades de Trabajo Autónomo se Realizarán?" colspan="4"></separator>
+                <field name="trabajo_autonomo" nolabel="1"/>
+            </group>
+            <group >
+                <separator string="¿En qué Escenario de Aprendizaje se Realizarán?" colspan="4"></separator>
+                <field name="escenario" nolabel="1"/>
+            </group>
+
+          <group>
+              <separator string=" Planificacion Diaria" colspan="4"></separator>
+              <field name="planificacion_ids" nolabel="1"/>
+          </group>
+
+
+
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="silabos.semana_tree_view" model="ir.ui.view">
+  <field name="name">silabos.semana.tree.view</field>
+     <field name="model">silabos.semana</field>
+     <field name="arch" type="xml">
+       <tree string="formulario para agregar semanas">
+
+              <field name="fechaInicio"/>
+              <field name="fechaFin"/>
+              <field name="horas_duracion"/>
+              <field name="contenido"/>
+              <field name="actividades_practicas"/>
+              <field name="trabajo_autonomo"/>
+              <field name="escenario"/>
+       </tree>
+     </field>
+
+</record>
+  <record id="action_silabos_semana" model="ir.actions.act_window">
+
+     <field name="name">Registro de semana</field>
+    <field name="res_model" >silabos.semana</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+
+  </record>
+
+
+</odoo>

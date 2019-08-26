@@ -1,0 +1,71 @@
+<odoo>
+ <record id="distribucion_silabos_form_view" model="ir.ui.view">
+
+   <field name="name">Distribucion de las Horas de Conformidad con el Art. 15 RRA</field>
+   <field name="model">silabos.distribucion</field>
+   <field name="arch" type="xml">
+     <form string="formulario para agregar Distribucion de Horas">
+        <header>
+
+        </header>
+        <sheeet>
+          <separator string=" Datos de la Distribucion de Horas "></separator>
+         <group name="group_top">
+          <group name="group_center">
+                  <field name="porcenhorasTeoriXDocente" widwet="selection"/>
+                  <field name="horasTeoriXDocente"/>
+                  <field name="porcenhorasPractiXDocente"  widwet="selection"/>
+                  <field name="horasPractiXDocente"/>
+                  <field name="porcenhorasVirtuales"  widwet="selection"/>
+                  <field name="virtual"/>
+                  <field name="porcenPresencial"  widwet="selection"/>
+                  <field name="presencial"/>
+                  <field name="porcenhorasPractiCampoTalle" widwet="selection"/>
+                  <field name="horasPractiCampoTalle"/>
+                  <field name="porcenhrsTrabAuto" widwet="selection"/>
+                  <field name="hrsTrabAuto"/>
+
+          </group>
+         </group>
+
+
+
+        </sheeet>
+     </form>
+   </field>
+ </record>
+
+   <!-- El siguinete bloque de codigo es para colocar una tabla con todos los registroa ingresados-->
+<record id="silabos.distribucion_tree_view" model="ir.ui.view">
+  <field name="name">silabos.distribucion.tree.view</field>
+     <field name="model">silabos.distribucion</field>
+     <field name="arch" type="xml">
+       <tree string="formulario para agregar Distribucion">
+              <field name="porcenhorasTeoriXDocente"/>
+              <field name="horasTeoriXDocente"/>
+              <field name="porcenhorasPractiXDocente"/>
+              <field name="horasPractiXDocente"/>
+              <field name="porcenhorasVirtuales"/>
+              <field name="virtual"/>
+              <field name="porcenPresencial"/>
+              <field name="presencial"/>
+              <field name="porcenhorasPractiCampoTalle"/>
+               <field name="horasPractiCampoTalle"/>
+              <field name="porcenhrsTrabAuto"/>
+              <field name="hrsTrabAuto"/>
+
+       </tree>
+     </field>
+
+</record>
+  <record id="action_silabos_distribucion" model="ir.actions.act_window">
+
+     <field name="name">Registro de Distribucion</field>
+    <field name="res_model" >silabos.distribucion</field>
+    <field name="type" >ir.actions.act_window</field>
+    <field name="view_mode" >tree,form</field>
+
+  </record>
+
+
+</odoo>
